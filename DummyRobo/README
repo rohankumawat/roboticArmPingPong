@@ -1,0 +1,4 @@
+This is just a dummy 6-DoF robotic arm URDF model
+Designed using Fusion 360
+URDF Exporter used: https://github.com/syuntoku14/fusion2urdf
+Robot dimensions are representative 
