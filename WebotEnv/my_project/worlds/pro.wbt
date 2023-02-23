@@ -1,0 +1,30 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.6548306649061383 0.648314137072267 0.3884399309685177 2.4073207415900995
+  position -0.012079945337111618 5.212583044399739 9.079973693920369
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Shape {
+  appearance PBRAppearance {
+    name "plane"
+  }
+  geometry DEF plane Cylinder {
+    height 1
+    radius 0.18
+    subdivision 25
+  }
+}
+Transform {
+}
