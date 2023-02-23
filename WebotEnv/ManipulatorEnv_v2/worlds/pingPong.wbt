@@ -11,8 +11,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.16058278005362403 0.34075285943432404 0.9263372277618886 0.9412375720434656
-  position -4.983135613902395 -6.22989838135521 2.955778792953445
+  orientation 0.03397620467273381 0.3753864941212272 -0.9262454305136466 0.19473224659812646
+  position -7.719765707581972 0.10980779527860995 0.907435706383668
 }
 TexturedBackground {
 }
@@ -24,12 +24,12 @@ RectangleArena {
   }
 }
 Robot {
-  translation -1.28 0 0.85
-  rotation 0 0 1 1.57
+  translation -1.5210474798115794 0.0314631548998961 0.82232982352996
+  rotation -0.0016114424422535903 9.548498891329951e-05 0.9999986970670873 1.6498049654585119
   children [
     Transform {
       children [
-        Solid {
+        DEF box Solid {
           children [
             DEF base Shape {
               appearance PBRAppearance {
@@ -38,7 +38,7 @@ Robot {
                 metalness 0
               }
               geometry Box {
-                size 0.2 0.2 0.1
+                size 0.2 0.2 0.05
               }
             }
           ]
@@ -47,7 +47,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 7.918496399533684e-07
+        position 2.6230278114253515e-10
         axis 0 0 1
         anchor 0 0 0.075
       }
@@ -57,7 +57,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 1.6354518404021052e-11 1.635455066412948e-11 0.07499383811492616
+        translation 2.9271807285487328e-05 1.4114184890431616e-05 0.04487889999999996
+        rotation 0.9773146223512862 0.2117777987644265 -0.0025085631060082895 0.00034329069722541776
         children [
           DEF link1 Shape {
             appearance PBRAppearance {
@@ -66,13 +67,13 @@ Robot {
               metalness 0
             }
             geometry Cylinder {
-              height 0.05
+              height 0.03
               radius 0.05
             }
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.05000025728947842
+              position -1.8129240775266453e-08
               anchor 0.07 0 0.025
             }
             device [
@@ -81,8 +82,8 @@ Robot {
               }
             ]
             endPoint Solid {
-              translation 0.07 -0.004748045492668054 0.11988127351590441
-              rotation 1 0 0 0
+              translation 0.0699999 -0.001999350625931301 0.07981699997717034
+              rotation -0.9999999925470946 -0.00012205188643644833 -3.0245380608745852e-06 0.049999966797768074
               children [
                 DEF link2 Shape {
                   appearance PBRAppearance {
@@ -91,12 +92,13 @@ Robot {
                     metalness 0
                   }
                   geometry Cylinder {
-                    height 0.2
+                    height 0.13
                     radius 0.02
                   }
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
+                    position -1.2451090380949381e-08
                     anchor -0.04 0 0.1
                   }
                   device [
@@ -105,7 +107,7 @@ Robot {
                     }
                   ]
                   endPoint Solid {
-                    translation -0.04 0 0.2
+                    translation -0.04 4.650512482207397e-06 0.12990600000003805
                     rotation 1 0 0 0
                     children [
                       DEF link3 Shape {
@@ -115,12 +117,13 @@ Robot {
                           metalness 0
                         }
                         geometry Cylinder {
-                          height 0.2
+                          height 0.13
                           radius 0.02
                         }
                       }
                       HingeJoint {
                         jointParameters HingeJointParameters {
+                          position 3.914646384828302e-13
                           axis 0 0 1
                           anchor 0 0 0.1
                         }
@@ -130,7 +133,8 @@ Robot {
                           }
                         ]
                         endPoint Solid {
-                          translation 0 0 0.15
+                          translation 3.7188100532815953e-07 -5.83014996601389e-07 0.0900066
+                          rotation -0.8036807547723509 0.008352860642917343 -0.5950020790952116 1.3274584681582748e-06
                           children [
                             DEF link4 Shape {
                               appearance PBRAppearance {
@@ -139,12 +143,13 @@ Robot {
                                 metalness 0
                               }
                               geometry Cylinder {
-                                height 0.1
+                                height 0.05
                                 radius 0.02
                               }
                             }
                             HingeJoint {
                               jointParameters HingeJointParameters {
+                                position -1.4969434380763828e-09
                                 anchor 0 0 0.05
                               }
                               device [
@@ -153,8 +158,8 @@ Robot {
                                 }
                               ]
                               endPoint Solid {
-                                translation 0 0 0.075
-                                rotation 1 0 0 0
+                                translation 1.7370099999999995e-06 6.971494006113372e-06 0.04487019999989672
+                                rotation 0.22545188169039382 0.9742503608773546 -0.002771889717324944 1.6049041769309358e-07
                                 children [
                                   DEF link5 Shape {
                                     appearance PBRAppearance {
@@ -167,7 +172,7 @@ Robot {
                                     }
                                   }
                                   Solid {
-                                    translation 0 0 0.075
+                                    translation 0 -7.96313e-06 0.065
                                     rotation 1 0 0 1.57
                                     children [
                                       DEF bat Shape {
@@ -178,7 +183,7 @@ Robot {
                                         }
                                         geometry Cylinder {
                                           height 0.01
-                                          radius 0.05
+                                          radius 0.04
                                         }
                                       }
                                     ]
@@ -190,24 +195,32 @@ Robot {
                                 boundingObject USE link5
                                 physics Physics {
                                 }
+                                linearVelocity -9.740544429935096e-08 6.156811556510975e-08 -2.1660768702054904e-08
+                                angularVelocity 2.9533086913247668e-08 -1.2736978006125656e-08 3.4290185276272125e-08
                               }
                             }
                           ]
                           boundingObject USE link4
                           physics Physics {
                           }
+                          linearVelocity -9.46981422587959e-08 6.174836442320984e-08 -1.7428057764657088e-08
+                          angularVelocity 2.9533086469628558e-08 -1.273699576793877e-08 3.4290186196317367e-08
                         }
                       }
                     ]
                     boundingObject USE link3
                     physics Physics {
                     }
+                    linearVelocity -9.31332442271276e-08 6.198218541887215e-08 -1.3872517060921766e-08
+                    angularVelocity -1.6182013592970285e-10 -6.864540059055392e-09 3.2787032385354626e-08
                   }
                 }
               ]
               boundingObject USE link2
               physics Physics {
               }
+              linearVelocity -1.0125064445362199e-07 6.1483412371647e-08 -5.02952080237893e-09
+              angularVelocity -1.813140173811814e-10 -6.851259974428373e-09 3.2833446919393394e-08
             }
           }
         ]
@@ -215,6 +228,8 @@ Robot {
         boundingObject USE link1
         physics Physics {
         }
+        linearVelocity -1.0243031296290245e-07 6.12791455657209e-08 -4.2953998013902974e-10
+        angularVelocity -1.6958954927546843e-10 -6.857041105385577e-09 3.279460076586273e-08
       }
     }
   ]
@@ -222,6 +237,8 @@ Robot {
   physics Physics {
   }
   controller "arm_controller"
+  linearVelocity -1.0211283038879288e-07 6.127498120786859e-08 -4.2870863020983743e-10
+  angularVelocity -1.6970663011168756e-10 -6.8563963772919435e-09 3.279451878360616e-08
 }
 Table {
   translation -0.09 0.000696878 6.03236e-14
@@ -234,7 +251,8 @@ Table {
   }
 }
 Solid {
-  translation -1.43 0 0.4
+  translation -1.4339366279959826 -0.015489620945965758 0.39855517263951445
+  rotation -0.07289165020501935 -0.12017924413033641 -0.9900726016866894 0.012544143910550113
   children [
     DEF Stand Shape {
       appearance PBRAppearance {
@@ -251,6 +269,8 @@ Solid {
   physics Physics {
     mass 1
   }
+  linearVelocity -1.6089177618367453e-09 2.754694268683079e-10 7.68752670410322e-11
+  angularVelocity -6.887578011526788e-10 -4.022515749536246e-09 1.350254861670321e-12
 }
 Solid {
   translation -0.99 0 0.8
