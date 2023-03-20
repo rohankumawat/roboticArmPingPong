@@ -10,10 +10,10 @@ clear;
 ja = [0,0,0,0,0];
 
 %% D-H Table
-theta = [ja(1), ja(2), ja(3)+pi/2, ja(4), ja(5)-pi/2];
-a =[0.05, 0.18, 0.0, 0.0, 0.1];
-d = [0.0, 0.0, 0.0, 0.28, 0.0];
-alpha = [pi/2, 0, pi/2, -pi/2, 0];
+theta = [ja(1), ja(2)+pi/2, ja(3)-pi/2, ja(4), ja(5)+pi/2];
+a =[0.0, 0.17275, 0.0, 0.0, 0.095]; %% A5 temp
+d = [0.02, 0.0, 0.0, 0.258, 0.0];
+alpha = [pi/2, 0, -pi/2, pi/2, 0];
 
 %% Link Generation
 L(1) = Link([theta(1), d(1),  a(1), alpha(1)], 'standrad');
@@ -26,22 +26,22 @@ R = SerialLink(L)
 R.name = "RAGO";
 
 t = [0, 0,0,0,0];
-% R.plot(theta+t);
+R.plot(theta+t);
 
 tmat = R.fkine(theta+t)
 % disp(tm0_5);
 
-
+R.teach
 %% Test
 % 
-t1 = [0, pi/4, pi/3, pi/2, pi/1.5];
-t2 = [0, pi/4, pi/3, pi/2, pi/2];
-for i= 1:5
-
-R.plot([t1(i),t2(i),theta(3),theta(4),theta(5)]);
-
-tmat = R.fkine([t1(i),t2(i),theta(3),theta(4),theta(5)])
-pause(1);
-end
+% t1 = [0, pi/4, pi/3, pi/2, pi/1.5];
+% t2 = [0, pi/4, pi/3, pi/2, pi/2];
+% for i= 1:5
+% 
+% R.plot([t1(i),t2(i),theta(3),theta(4),theta(5)]);
+% 
+% tmat = R.fkine([t1(i),t2(i),theta(3),theta(4),theta(5)])
+% pause(1);
+% end
 
 
