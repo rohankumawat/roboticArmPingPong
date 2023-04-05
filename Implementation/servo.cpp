@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
    vector<double> jointPos1, jointPos2, jointPos;
    for(int i = 0; i < 2; i++)
    {
+	// Cubic trajectory generation
 	double a0 = curAngle[i];
 	double a1 = 0.0;
 	double a2 = 3.0 * (newAngle[i] - curAngle[i]) / pow(tf, 2);
@@ -75,16 +76,16 @@ for(int i=0; i<11; i++)
    // The PWM range for FT5330M => 500us-2500us (0.5ms -2.5ms)
    // Corresponds to 5-25 steps.
 
-   softPwmWrite(GPIO1, jointPos1[i]); // Set the pulse high for 1.5ms/ 1500us (15*100us)
-   softPwmWrite(GPIO2, jointPos2[i]);
+   softPwmWrite(GPIO1, jointPos1[i]); // Write the intermediate positions of the servo
+   softPwmWrite(GPIO2, jointPos2[i]); // Write the intermediate positions of the servo
 
    delay(100);
 
 }
 
    delay(1000);
-   softPwmWrite(GPIO1, 15); // Set the pulse high for 1.5ms/ 1500us (15*100us)
-   softPwmWrite(GPIO2, 15);
+   softPwmWrite(GPIO1, 15); // Reset the servo to 0 degrees
+   softPwmWrite(GPIO2, 15); // Reset the servo to 0 degrees
    delay(1000);
 
 }
