@@ -149,6 +149,32 @@ void servoControl(vector<double> jointPos) {
 int main() {
 
 
+    if (wiringPiSetupGpio() < 0) return 1;
+    
+
+
+    pinMode(GPIO1, OUTPUT);
+    digitalWrite(GPIO1, LOW);
+
+    pinMode(GPIO2, OUTPUT);
+    digitalWrite(GPIO2, LOW);
+
+    pinMode(GPIO3, OUTPUT);
+    digitalWrite(GPIO3, LOW);
+
+    pinMode(GPIO4, OUTPUT);
+    digitalWrite(GPIO4, LOW);
+
+    pinMode(GPIO5, OUTPUT);
+    digitalWrite(GPIO5, LOW);
+
+    softPwmCreate(GPIO1, 0, 200); 
+    softPwmCreate(GPIO2, 0, 200); 
+    softPwmCreate(GPIO3, 0, 200); 
+    softPwmCreate(GPIO4, 0, 200); 
+    softPwmCreate(GPIO5, 0, 200); 
+
+
     std::vector<double> curAngle(5, 0.0);
     vector<double> jointPos;
     vector<double> temp;
@@ -173,7 +199,10 @@ int main() {
     // Gen trajectory
     jointPos = genTrajectory(curAngle, temp);
 
+    // Actuate servos
+    servoControl(jointPos);
 
+    
     for (int i = 0; i < 5; i++)
         cout << theta[i] << "\n";
     cout << "NEXT" << "\n\n\n";
