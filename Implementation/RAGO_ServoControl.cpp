@@ -39,9 +39,9 @@ vector<double> getPosition(double x, double y, double z) {
     t[0] = atan2(y, x);
     t[1] = M_PI / 2 - atan2(l2, l1) - acos((a[1] * a[1] + l3 * l3 - d[3] * d[3]) / (2 * a[1] * l3));
     t[2] = acos((l3 * l3 - a[1] * a[1] - d[3] * d[3]) / (2 * a[1] * d[3]));
-    theta[0] = t[0];
-    theta[1] = t[1];
-    theta[2] = t[2];
+    theta[0] = 0.1111*t[0]+5;
+    theta[1] = 0.1111*t[1]+5;
+    theta[2] = 0.1111*t[2]+5;
 
 
     return theta;
