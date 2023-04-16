@@ -13,7 +13,7 @@
 
 
 
-TrajectoryPredictor::TrajectoryPredictor(int device_id) 
+TrajectoryPredictor::TrajectoryPredictor(int device_id) :capture(device_id)
 {
 
     capture.open(device_id, cv::CAP_DSHOW);
@@ -25,7 +25,8 @@ TrajectoryPredictor::TrajectoryPredictor(int device_id)
 }
 
 TrajectoryPredictor::~TrajectoryPredictor() {
-    // code to deallocate any dynamically allocated memory or resources
+
+ // destructor
 }
 
 
@@ -42,9 +43,13 @@ cv::Mat TrajectoryPredictor::createColorMask(cv::Mat _image_RGB)
 
 
     // HSV range for Orange color
-    cv::Scalar lowerRange(8, 96, 115);
-    cv::Scalar upperRange(14, 255, 237);
+    //cv::Scalar lowerRange(8, 96, 115);
+    //cv::Scalar upperRange(14, 255, 237);
 
+
+    //HSV range for Pink color
+    cv::Scalar lowerRange(157, 73, 168);
+    cv::Scalar upperRange(171, 138, 255);
 
     // Create mask based on chosen histogram thresholds
     cv::Mat colorFilteredImage;
@@ -56,82 +61,81 @@ cv::Mat TrajectoryPredictor::createColorMask(cv::Mat _image_RGB)
 
 
 /*
- * Process the frames from video capture
+ * Process the frames from video capture to get the moving objects filtered by color
+ * The program looks for a moving pink object
  */
 
 void TrajectoryPredictor::getMovingObjects()
 {
-    cv::Mat frame, fgMask, object, orgframe;
+
+    cv::Mat orgFrame, frame, fgMask, object, filtered_image, dilated_image;
     cv::Scalar objectColor;
 
-    cv::Mat filtered_image;
+
+    // Kernel definition for noise filter (dialation operation).
     cv::Mat kernel = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3));
-    cv::Mat dilated_image;
 
 
+    /*
+     * Background subtractor to eliminate the stationary background from the frames
+     * Generates the moving object
+     */
     cv::Ptr<cv::BackgroundSubtractor> pBackSub = cv::createBackgroundSubtractorMOG2();
-
+    cv::Size output_size(640, 480);
 
     while (true) {
 
-        capture >> orgframe;
-
-        if (orgframe.empty())
+        capture >> orgFrame;
+        if (orgFrame.empty())
             break;
 
-        cv::pyrDown(orgframe, frame);
+
+        //cv::pyrDown(orgFrame, frame);
+        cv::resize(orgFrame, frame, output_size);
+
+        // Extraction of moving objects 
         pBackSub->apply(frame, fgMask);
         frame.copyTo(object, fgMask);
         objectColor = cv::mean(object, fgMask);
 
+        // Filtering the color followed by noise removal
         cv::Mat mskBall = createColorMask(object);
         cv::dilate(mskBall, filtered_image, kernel);
 
+        // Contour detection
         std::vector<std::vector<cv::Point>> contours;
         std::vector<cv::Vec4i> hierarchy;
         cv::findContours(filtered_image, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
-        
-        ////////////////////////////////////////////////////////////// AVERAGE
+        // Finding the mean centroid of the object
         if (contours.size() > 1) {
             std::cout << contours.size() << "  ";
-            // Assuming you have already detected and stored the contours in the vector "contours"
-
-            // Calculate the moments of all contours
             std::vector<cv::Moments> contourMoments(contours.size());
-            for (int i = 0; i < contours.size(); i++) {
+            for (int i = 0; i < contours.size(); i++) 
                 contourMoments[i] = moments(contours[i]);
-
-            }
+            
 
             // Calculate the centers of all contours
             std::vector<cv::Point2f> contourCenters(contours.size());
             for (int i = 0; i < contours.size(); i++) {
                 contourCenters[i] = cv::Point2f(contourMoments[i].m10 / contourMoments[i].m00, contourMoments[i].m01 / contourMoments[i].m00);
-                //cout << isnan(contourCenters[i].x) << "   " << contourCenters[i] << "\n";
             }
 
-            // Calculate the average center of all contours
             cv::Point2f avgCenter(0, 0);
             for (int i = 0; i < contourCenters.size(); i++) {
                 if (!(isnan(contourCenters[i].x) || isnan(contourCenters[i].y)))
                     avgCenter += contourCenters[i];
             }
             int num = contourCenters.size();
-
             avgCenter = avgCenter / num;
             std::cout << avgCenter << "\n";
-            if (avgCenter.x > 300)
+            if (avgCenter.x > 500)
                 break;
-
         }
-        ///////////////////////////////////////////////////////////////////////////////
+        object.setTo(0);
 
         //imshow("Foreground mask", fgMask);
         //imshow("Moving object", filtered_image);
-        object.setTo(0);
-
-
 
     }
 }
