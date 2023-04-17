@@ -69,7 +69,7 @@ void servoWrite(std::vector<double> jointPos, double dt, double tf)
         softPwmWrite(GPIO4, jointPos[i + 3*jointPos.size() / 5]);
         softPwmWrite(GPIO5, jointPos[i + 4*jointPos.size() / 5]);
 
-        std::cout << jointPos[i] << " " << jointPos[i + jointPos.size() / 5] << " " << jointPos[i + 2*jointPos.size() / 5] << " " << jointPos[i + 3*jointPos.size() / 5] << " " << jointPos[i + 4*jointPos.size() / 5] << "\n";
+        //std::cout << jointPos[i] << " " << jointPos[i + jointPos.size() / 5] << " " << jointPos[i + 2*jointPos.size() / 5] << " " << jointPos[i + 3*jointPos.size() / 5] << " " << jointPos[i + 4*jointPos.size() / 5] << "\n";
         
         std::this_thread::sleep_for(std::chrono::milliseconds(long(dt*1000))); // duration in milliseconds
 
