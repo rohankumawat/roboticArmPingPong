@@ -54,8 +54,9 @@ To build and run 'Rago', you need the following dependencies:
 >$ ./roboticArmPingPong
 ```
 <br>
+
 ## Document
-document/RealTime Embedded Programming.docx
+[document/RealTime Embedded Programming.docx](https://github.com/rohankumawat/roboticArmPingPong/blob/main/document/RealTime%20Embedded%20Programming.docx)
 <br>
 
 ## Social Media
