@@ -85,9 +85,9 @@ int main()
         t2.join();
 
 
-        std::cout << "\nPrediction:\n ";
-        std::cout << positionZ[0] << " " << positionZ[1] << " " << positionZ[2]<< " " << positionZ[3] << "\n";
-        std::cout << positionY[0] << " " << positionY[1] << " " << positionY[2]<< " " << positionY[3]<< "\n";
+        //std::cout << "\nPrediction:\n ";
+        //std::cout << positionZ[0] << " " << positionZ[1] << " " << positionZ[2]<< " " << positionZ[3] << "\n";
+        //std::cout << positionY[0] << " " << positionY[1] << " " << positionY[2]<< " " << positionY[3]<< "\n";
 
         /*
          * Mapping from pixels to meters
