@@ -1,0 +1,4 @@
+This version includes the table and a conceptual plane of action (the semi-transparent circle).
+The robotic manipulator must be adjusted to reach/hit the ball at every point on the given plane of action.
+Table dimensions 1.8x1x0.8 (m)
+Plane of action -> radius -> 0.5m

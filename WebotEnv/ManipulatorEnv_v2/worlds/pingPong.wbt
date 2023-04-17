@@ -1,0 +1,295 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/humans/pedestrian/protos/Pedestrian.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.0016107663702022885 0.9990536783900633 0.04346438918223407 0.07587088858561174
+  position -3.0876680315053275 0.026413104998663322 1.0878556967115753
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+  floorAppearance Grass {
+  }
+}
+Robot {
+  translation -1.4842376900538656 0.024368284354131423 0.8224998049369782
+  rotation 0.001788038229999517 -0.004546054195558998 0.9999880680840841 0.21219878224415842
+  children [
+    Transform {
+      children [
+        DEF box Solid {
+          children [
+            DEF base Shape {
+              appearance PBRAppearance {
+                baseColor 0 0 0
+                roughness 1
+                metalness 0
+              }
+              geometry Box {
+                size 0.2 0.2 0.05
+              }
+            }
+          ]
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -3.4000000000912003
+        axis 0 0 1
+        anchor 0 0 0.075
+      }
+      device [
+        RotationalMotor {
+          name "m1"
+        }
+      ]
+      endPoint Solid {
+        translation -3.1906684743241284e-05 -6.165418523945748e-06 0.044878899999999874
+        rotation 1.4555145164062815e-05 -0.00017247445224115044 -0.9999999850203556 3.400000858147166
+        children [
+          DEF link1 Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.05
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -0.45000021748068175
+              anchor 0.07 0 0.025
+            }
+            device [
+              RotationalMotor {
+                name "m2"
+              }
+            ]
+            endPoint Solid {
+              translation 0.0699998 0.022007018072556832 0.07514584845873341
+              rotation -0.9999999998602891 -1.6417498307404765e-05 3.1444934664209825e-06 0.5000002234845571
+              children [
+                DEF link2 Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.5 0 0.5
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.14
+                    radius 0.02
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 0.49999999995291433
+                    anchor -0.04 0 0.1
+                  }
+                  device [
+                    RotationalMotor {
+                      name "m3"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation -0.04 -0.01906052663960008 0.13490134888200733
+                    rotation 1 0 0 0.49999999995291405
+                    children [
+                      DEF link3 Shape {
+                        appearance PBRAppearance {
+                          baseColor 0 0.5 1
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry Cylinder {
+                          height 0.14
+                          radius 0.02
+                        }
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position -2.2118488025166456e-11
+                          axis 0 0 1
+                          anchor 0 0 0.1
+                        }
+                        device [
+                          RotationalMotor {
+                            name "m4"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 3.4443600000784927e-07 3.548739999923816e-07 0.0999692
+                          rotation -0.8105169857765755 0.008400854361863582 -0.5856548825149889 1.3367927963737382e-06
+                          children [
+                            DEF link4 Shape {
+                              appearance PBRAppearance {
+                                baseColor 0.5 0.2 0.7
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry Cylinder {
+                                height 0.05
+                                radius 0.02
+                              }
+                            }
+                            HingeJoint {
+                              jointParameters HingeJointParameters {
+                                position 3.6212018327890503e-12
+                                anchor 0 0 0.05
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "m5"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation -2.55989e-06 8.487014634250675e-06 0.03484140000006418
+                                rotation 1 0 0 0
+                                children [
+                                  DEF link5 Shape {
+                                    appearance PBRAppearance {
+                                      baseColor 1 0 0
+                                      roughness 1
+                                      metalness 0
+                                    }
+                                    geometry Box {
+                                      size 0.01 0.01 0.03
+                                    }
+                                  }
+                                  Solid {
+                                    translation 0 -3.18529e-05 0.035
+                                    rotation 1 0 0 1.57
+                                    children [
+                                      DEF bat Shape {
+                                        appearance PBRAppearance {
+                                          baseColor 1 0 0
+                                          roughness 1
+                                          metalness 0
+                                        }
+                                        geometry Cylinder {
+                                          height 0.01
+                                          radius 0.025
+                                        }
+                                      }
+                                    ]
+                                    boundingObject USE bat
+                                    physics Physics {
+                                    }
+                                  }
+                                ]
+                                boundingObject USE link5
+                                physics Physics {
+                                }
+                                linearVelocity -6.131263943567677e-09 2.420982391309226e-08 4.2506028064416695e-12
+                                angularVelocity -4.01504701952309e-10 -9.562945513286702e-11 -1.1621271025949563e-08
+                              }
+                            }
+                          ]
+                          boundingObject USE link4
+                          physics Physics {
+                          }
+                          linearVelocity -6.12514053462244e-09 2.4182952205007447e-08 4.261850067040896e-12
+                          angularVelocity -4.0150077841660086e-10 -9.56296082587629e-11 -1.1621271171400643e-08
+                        }
+                      }
+                    ]
+                    boundingObject USE link3
+                    physics Physics {
+                    }
+                    linearVelocity -6.115412534838498e-09 2.414168634445858e-08 4.265823224093078e-12
+                    angularVelocity -4.0171897715505553e-10 -9.566203920582361e-11 -1.140006431850239e-08
+                  }
+                }
+              ]
+              boundingObject USE link2
+              physics Physics {
+              }
+              linearVelocity -5.535915018177348e-09 2.4519306191166562e-08 -1.932510898726709e-11
+              angularVelocity -4.0173396050122195e-10 -9.566224405061068e-11 -1.1400075910887028e-08
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE link1
+        physics Physics {
+        }
+        linearVelocity -5.314862409605645e-09 2.3679570594508305e-08 -2.006691649386409e-11
+        angularVelocity -4.017283183007484e-10 -9.570092637930143e-11 -1.1400078362266194e-08
+      }
+    }
+  ]
+  boundingObject USE base
+  physics Physics {
+  }
+  controller "arm_controller"
+  linearVelocity -5.310179964283615e-09 2.3660730921116162e-08 -2.0072889128641686e-11
+  angularVelocity -4.0174359619790806e-10 -9.564739808388407e-11 -1.1400088756622243e-08
+}
+Table {
+  translation -0.09 0.000696878 6.03236e-14
+  rotation -1.91796e-08 1.91949e-08 -1 -1.5699953071795862
+  size 1 1.8 0.8
+  trayAppearance VarnishedPine {
+    colorOverride 0 0 0.5764
+    textureTransform TextureTransform {
+    }
+  }
+}
+Solid {
+  translation -1.4874829504207052 -0.004595366142652287 0.3985587099000458
+  rotation -0.0048241401774012215 -0.0012694115761699805 -0.9999875580554984 0.07316038169964864
+  children [
+    DEF Stand Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 1 0.3
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.5 0.5 0.8
+      }
+    }
+  ]
+  boundingObject USE Stand
+  physics Physics {
+    mass 1
+  }
+  linearVelocity -3.5543708415846663e-11 1.5626175246327604e-10 -6.002665031701327e-14
+  angularVelocity -3.9992755097119227e-10 -9.094055866961678e-11 -1.9285508482225994e-13
+}
+Solid {
+  translation -0.99 0 0.8
+  rotation 0 1 0 1.57
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        transparency 0.4
+      }
+      geometry Cylinder {
+        height 0.0001
+        radius 0.5
+      }
+    }
+  ]
+  name "ImpactPlane"
+}
+Pedestrian {
+  translation 1.12 0.000254829 1.27
+  rotation 0 0 1 3.14
+}
