@@ -54,6 +54,6 @@ To build and run 'Rago', you need the following dependencies:
 >$ ./roboticArmPingPong
 ```
 ## Social Media
- <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-vector%2Finstagram-icon_954290.htm&psig=AOvVaw0KqaFsNB_UFaVrka_hzAYV&ust=1681854427993000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjxtJLysf4CFQAAAAAdAAAAABAE"(<https://twitter.com/TeamRago>) <br>
- <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Ftwitter-logo&psig=AOvVaw1jBQJifQgUQkzi6L8W6b7y&ust=1681854647292000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKD5wvnysf4CFQAAAAAdAAAAABAJ"(<https://instagram.com/TeamRago>)
+ <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-vector%2Finstagram-icon_954290.htm&psig=AOvVaw0KqaFsNB_UFaVrka_hzAYV&ust=1681854427993000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjxtJLysf4CFQAAAAAdAAAAABAE.jpeg"(<https://twitter.com/TeamRago>) <br>
+ <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Ftwitter-logo&psig=AOvVaw1jBQJifQgUQkzi6L8W6b7y&ust=1681854647292000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKD5wvnysf4CFQAAAAAdAAAAABAJ.jpeg"(<https://instagram.com/rago_the_robo>)
 
