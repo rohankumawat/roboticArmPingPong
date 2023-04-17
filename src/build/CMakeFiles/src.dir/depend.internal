@@ -3,6 +3,7 @@
 
 CMakeFiles/src.dir/main.cpp.o
  /home/rago/work/implementation/src/main.cpp
+ /home/rago/work/implementation/src/mapping.h
  /home/rago/work/implementation/src/robot_arm.h
  /home/rago/work/implementation/src/servo_func.h
  /home/rago/work/implementation/src/trajectory_predictor.h
@@ -314,6 +315,9 @@ CMakeFiles/src.dir/main.cpp.o
  /usr/include/opencv4/opencv2/video/background_segm.hpp
  /usr/include/opencv4/opencv2/video/tracking.hpp
  /usr/include/opencv4/opencv2/videoio.hpp
+CMakeFiles/src.dir/mapping.cpp.o
+ /home/rago/work/implementation/src/mapping.cpp
+ /home/rago/work/implementation/src/mapping.h
 CMakeFiles/src.dir/robot_arm.cpp.o
  /home/rago/work/implementation/src/robot_arm.cpp
  /home/rago/work/implementation/src/robot_arm.h

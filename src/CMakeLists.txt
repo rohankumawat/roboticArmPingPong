@@ -7,7 +7,8 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 add_executable(src main.cpp
                    servo_func.cpp
                    trajectory_predictor.cpp
-                   robot_arm.cpp)
+                   robot_arm.cpp
+		   mapping.cpp)
 target_link_libraries(src wiringPi)
 target_link_libraries(src Eigen3::Eigen)
 target_link_libraries(src ${OpenCV_LIBS})

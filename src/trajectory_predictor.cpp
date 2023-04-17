@@ -50,16 +50,6 @@ void TrajectoryPredictor::stopLoop() {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /*
  * Function to create a color mask to filter the required color from the frame
  * Set to retreive orange color from the frame
@@ -180,7 +170,7 @@ std::vector<double> TrajectoryPredictor::getPredictedTrajectory(int flag)
         object.setTo(0);
         //std::cout << "Test";
         //imshow("Foreground mask", fgMask);
-        //imshow("Moving object", filtered_image);
+        imshow("Moving object", filtered_image);
         int key = cv::waitKey(30);
         if (key == 27)
             break;
@@ -210,7 +200,7 @@ std::vector<double> TrajectoryPredictor::getPredictedTrajectory(int flag)
             }
         }
         Eigen::MatrixXd new_Y = new_X_poly * weight;
-        prediction = { new_Y (0,0), new_Y(0,1)};
+        prediction = {avgCenter.x, avgCenter.y, new_Y (0,0), new_Y(0,1)};
 
        // std::cout << "\nPrediction \n";
         //std::cout << new_Y << std::endl;
@@ -230,7 +220,7 @@ std::vector<double> TrajectoryPredictor::getPredictedTrajectory(int flag)
             }
         }
         Eigen::MatrixXd new_Y = new_X_poly * weight;
-        prediction = { new_Y(0,0), new_Y(0,1) };
+        prediction = {avgCenter.x, avgCenter.y, new_Y(0,0), new_Y(0,1) };
 
         //std::cout << "\nPrediction \n";
         //std::cout << new_Y << std::endl;

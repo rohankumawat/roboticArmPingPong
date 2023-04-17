@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/src.dir/main.cpp.o"
+  "CMakeFiles/src.dir/mapping.cpp.o"
   "CMakeFiles/src.dir/robot_arm.cpp.o"
   "CMakeFiles/src.dir/servo_func.cpp.o"
   "CMakeFiles/src.dir/trajectory_predictor.cpp.o"

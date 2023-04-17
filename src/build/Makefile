@@ -169,6 +169,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mapping.o: mapping.cpp.o
+
+.PHONY : mapping.o
+
+# target to build an object file
+mapping.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/mapping.cpp.o
+.PHONY : mapping.cpp.o
+
+mapping.i: mapping.cpp.i
+
+.PHONY : mapping.i
+
+# target to preprocess a source file
+mapping.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/mapping.cpp.i
+.PHONY : mapping.cpp.i
+
+mapping.s: mapping.cpp.s
+
+.PHONY : mapping.s
+
+# target to generate assembly for a file
+mapping.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/mapping.cpp.s
+.PHONY : mapping.cpp.s
+
 robot_arm.o: robot_arm.cpp.o
 
 .PHONY : robot_arm.o
@@ -262,6 +289,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... mapping.o"
+	@echo "... mapping.i"
+	@echo "... mapping.s"
 	@echo "... robot_arm.o"
 	@echo "... robot_arm.i"
 	@echo "... robot_arm.s"
