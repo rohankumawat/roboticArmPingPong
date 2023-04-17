@@ -46,7 +46,7 @@ To build and run 'Rago', you need the following dependencies:
 ```
 - Run `cmake .` to generate the Makefile
 - Run `make` to compile the source code
-- Run `./waveguide` to start the program
+- Run `./roboticArmPingPong` to start the program
 ```
 ```
 >$ cmake ..
@@ -54,7 +54,8 @@ To build and run 'Rago', you need the following dependencies:
 >$ ./roboticArmPingPong
 ```
 <br>
+
 ## Social Media
-Twitter: https://twitter.com/TeamRago
+Twitter: https://twitter.com/TeamRago<br>
 Instagram: https://instagram.com/rago_the_robo
 
