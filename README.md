@@ -55,7 +55,6 @@ To build and run 'Rago', you need the following dependencies:
 ```
 <br>
 ## Social Media
- <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-vector%2Finstagram-icon_954290.htm&psig=AOvVaw0KqaFsNB_UFaVrka_hzAYV&ust=1681854427993000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjxtJLysf4CFQAAAAAdAAAAABAE.jpeg"(<https://twitter.com/TeamRago>) <br>
- ![Instagram Logo](https://raw.githubusercontent.com/aish0512/https://github.com/rohankumawat/roboticArmPingPong.git/main/<path-to-image-file>/instagram_logo.png)
-(<https://instagram.com/rago_the_robo>)
+Twitter: https://twitter.com/TeamRago
+Instagram: https://instagram.com/rago_the_robo
 
