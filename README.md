@@ -1,7 +1,7 @@
 <p align="center"><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzA2MzhkMTYyZWEwODg5MTAzM2I2NjkwMjc2MjZmNTkzNzk1M2YxYSZjdD1n/LIZGe35ppCezRxJR31/giphy.gif">
 <p>Rago is a robotic arm which is designed to play table tennis in real-time by tracking the ball's trajectory and hitting the ball if its within its proximity. Our journey begins by solving the kinematics equation, finding the trajectory for each joint, 3D printing of robotic arm, assembling of parts, and tracking of the ball in realtime. It has been equiped with camera sensor and machine learning algorithm to track the ball. It runs on Raspberry Pi 4B with Raspbian OS</p>
 
-##CONTRIBUTORS
+## CONTRIBUTORS
 <ul><li>Athul Prasad Prasad Geetha</li>
 <li>Aishwarya Palit</li>
 <li>Gaurav Madihalli Sreekantegowda</li>
@@ -53,5 +53,7 @@ To build and run 'Rago', you need the following dependencies:
 >$ make
 >$ ./roboticArmPingPong
 ```
-
+## Social Media
+ <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-vector%2Finstagram-icon_954290.htm&psig=AOvVaw0KqaFsNB_UFaVrka_hzAYV&ust=1681854427993000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjxtJLysf4CFQAAAAAdAAAAABAE"(<https://twitter.com/TeamRago>) <br>
+ <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Ftwitter-logo&psig=AOvVaw1jBQJifQgUQkzi6L8W6b7y&ust=1681854647292000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKD5wvnysf4CFQAAAAAdAAAAABAJ"(<https://instagram.com/TeamRago>)
 
